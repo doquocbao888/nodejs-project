@@ -28,7 +28,9 @@ app.use("/courses", courses);
 app.use("/course", course);
 
 mongoose
-  .connect("mongodb://localhost/admin")
+  .connect(
+    "mongodb+srv://doquocbao888:zxczxczxc1@cluster0.7asno6c.mongodb.net/?retryWrites=true&w=majority"
+  )
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server is running on ${PORT}`);
