@@ -1,10 +1,14 @@
 import express from "express";
 import { engine } from "express-handlebars";
 import mongoose from "mongoose";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 import homePage from "./routes/homePage.js";
 import courses from "./routes/courses.js";
 import course from "./routes/course.js";
+
+const PORT = process.env.PORT || 5001;
 
 const app = express();
 
@@ -26,8 +30,8 @@ app.use("/course", course);
 mongoose
   .connect("mongodb://localhost/admin")
   .then(() => {
-    app.listen(3000, () => {
-      console.log("Server is running");
+    app.listen(PORT, () => {
+      console.log(`Server is running on ${PORT}`);
     });
     console.log("Connected to DB");
   })
