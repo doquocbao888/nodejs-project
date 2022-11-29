@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "scss": "node-sass --watch app.scss public/css/app.css",
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
